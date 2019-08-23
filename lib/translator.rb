@@ -2,7 +2,7 @@ require 'yaml'
 
 def load_library(path)
  emote_library = YAML.load_file(path)
- emote_library.push("get_meaning")
+ emote_library["get_meaning"]
  emote_library
 end
 
