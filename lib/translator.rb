@@ -11,7 +11,14 @@ new_library
 end
 
 def get_japanese_emoticon(path, emoticon)
-  lib = load_library(path)
+lib = load_library(path)
+emoticons = lib[:get_emoticon]
+emoticons.select {|key,value| 
+  if key == emoticon
+    return value
+  end
+}
+puts "Sorry, that emoticon was not found"
 end
 
 def get_english_meaning
