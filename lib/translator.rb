@@ -7,7 +7,7 @@ emote_library.each { |name, emoticons|
   new_library[:get_meaning][emoticons[1]] = name 
   new_library[:get_emoticon][emoticons[0]] = emoticons[1]
 }
-puts new_library
+new_library
 end
 
 def get_japanese_emoticon()
