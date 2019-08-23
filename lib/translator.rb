@@ -21,6 +21,14 @@ emoticons.select {|key,value|
 return "Sorry, that emoticon was not found"
 end
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning(path, emoticon)
+lib = load_library(path)
+  sorry_message= "Sorry, that emoticon was not found"
+  meanings = lib[:get_meaning]
+  meanings.select {|key,value|
+    if key == emoticon
+      return value
+    end
+  }
+  return sorry_message
 end
